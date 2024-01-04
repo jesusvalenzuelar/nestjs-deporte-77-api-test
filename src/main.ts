@@ -31,6 +31,10 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, swaggerDocument);
   /** End of Swagger configuration */
 
+  //Starts listening for shutdown hooks
+  app.enableShutdownHooks();
+
+  //start listening
   await app.listen(3000);
 }
 bootstrap();
